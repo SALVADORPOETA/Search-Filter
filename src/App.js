@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {data} from './data.js';
+import './App.css'
 
 function App() {
   const [search, setSearch] = useState('')
@@ -21,31 +22,33 @@ function App() {
               placeholder='Search contacts' />
           </InputGroup>
         </Form>
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.filter((item) => {
-              return search.toLocaleLowerCase() === '' ? item 
-              : item.first_name.toLocaleLowerCase().includes(search)
-            })
-            .map((item) => (
-              <tr key={item.id}>
-                <td>{item.first_name}</td>
-                <td>{item.last_name}</td>
-                <td>{item.email}</td>
-                <td>{item.phone}</td>
+        <div className='Table1' >
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data.filter((item) => {
+                return search.toLocaleLowerCase() === '' ? item 
+                : item.first_name.toLocaleLowerCase().includes(search)
+              })
+              .map((item) => (
+                <tr key={item.id}>
+                  <td>{item.first_name}</td>
+                  <td>{item.last_name}</td>
+                  <td>{item.email}</td>
+                  <td>{item.phone}</td>
+                </tr>
+              ))}
 
-          </tbody>
-        </Table>
+            </tbody>
+          </Table>
+        </div>
       </Container>
     </div>
   );
