@@ -4,7 +4,7 @@
     width: 100%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 300px) {
     .Table1 {
         overflow-x: auto;
         border-collapse: auto;
