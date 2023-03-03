@@ -1,5 +1,13 @@
-/* .Table1 {
+.Table1 {
     overflow-x: auto;
     border-collapse: collapse;
     width: 100%;
-} */
+}
+
+@media screen and (max-width: 600px) {
+    .Table1 {
+        overflow-x: auto;
+        border-collapse: auto;
+        width: auto;    
+    }
+}
